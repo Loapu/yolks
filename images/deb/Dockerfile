@@ -27,7 +27,7 @@ RUN          update-locale lang=en_US.UTF-8 \
              && dpkg-reconfigure --frontend noninteractive locales
 
 ## Install Cloudflared
-RUN          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64.deb \
+RUN          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$(dpkg --print-architecture).deb \
              && dpkg -i cloudflared.deb
 
 
